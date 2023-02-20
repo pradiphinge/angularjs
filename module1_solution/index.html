@@ -1,0 +1,50 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lunch Check</title>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+		<script src="./js/LunchCheck.js"></script>
+	</head>
+	<body>
+		<div class="container" ng-controller="LunchCheckController">
+			<h1>Lunch Checker</h1>
+
+			<div class="form-group">
+				<input
+					id="lunch-menu"
+					type="text"
+					placeholder="list comma separated dishes you usually have for lunch"
+					class="form-control"
+					ng-model="lunchMenu"
+				/>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" ng-click="lunchCheck()">
+					Check If Too Much
+				</button>
+			</div>
+			<div ng-cloak class="form-group message">{{ hint }}</div>
+		</div>
+		<script id="__bs_script__">
+			//<![CDATA[
+			document.write(
+				"<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.11'><\/script>".replace(
+					'HOST',
+					location.hostname
+				)
+			);
+			//]]>
+		</script>
+	</body>
+</html>
